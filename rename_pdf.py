@@ -25,13 +25,13 @@ def extract_work_order_and_rename(pdf_path):
     else:
         print(f"No Work Order found in: {pdf_path}")
 
-# Process all PDFs in the new folder
+# Process all PDFs in the specified directory
 def process_pdfs_in_directory(directory):
     for filename in os.listdir(directory):
         if filename.endswith(".pdf"):
             pdf_path = os.path.join(directory, filename)
             extract_work_order_and_rename(pdf_path)
 
-# Specify the new directory
-pdf_directory = r"PDF-12212024"  # Update this to the correct folder path
+# Specify the absolute path to the folder containing the PDFs
+pdf_directory = r"D:\path_to\PDF-12212024"  # Replace with your full folder path
 process_pdfs_in_directory(pdf_directory)
